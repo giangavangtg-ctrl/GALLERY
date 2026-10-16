@@ -1,0 +1,60 @@
+/* Thiết lập box-sizing để padding không làm tăng kích thước thực tế của phần tử */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+    background-color: #f4f4f4;
+}
+
+h2 {
+    margin-bottom: 20px;
+    color: #333;
+}
+
+/* =======================================
+   BỐ CỤC GALLERY MẶC ĐỊNH (MÀN HÌNH LỚN > 700px)
+   ======================================= */
+.gallery {
+    display: flex;
+    flex-wrap: wrap; /* Cho phép các mục rớt xuống dòng dưới nếu hết chỗ */
+    padding: 0 5px;
+}
+
+.gallery-item {
+    /* Hiển thị 4 ảnh trên 1 dòng => 100% / 4 = 25% */
+    width: 25%;
+    padding: 10px; /* Tạo khoảng cách (gap) giữa các ảnh */
+}
+
+.gallery-item img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 8px; /* Bo góc ảnh cho đẹp */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+/* =======================================
+   MEDIA QUERIES CHO MÀN HÌNH < 700px
+   ======================================= */
+@media (max-width: 700px) {
+    .gallery-item {
+        /* Hiển thị 2 ảnh trên 1 dòng => 100% / 2 = 50% */
+        width: 50%;
+    }
+}
+
+/* =======================================
+   MEDIA QUERIES CHO MÀN HÌNH < 500px
+   ======================================= */
+@media (max-width: 500px) {
+    .gallery-item {
+        /* Hiển thị 1 ảnh trên 1 dòng => Chiếm trọn 100% */
+        width: 100%;
+    }
+}
